@@ -26,7 +26,7 @@ README.md
 
 Installing the `psycopg2` PostgreSQL database adapter
 
-``` console
+```
 pip install psycopg2
 ```
 
