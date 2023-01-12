@@ -60,7 +60,7 @@ time_table_create = ("""
         week INT,
         month INT,
         year INT,
-        weekday BOOLEAN
+        weekday INT
     )
 """)
 
