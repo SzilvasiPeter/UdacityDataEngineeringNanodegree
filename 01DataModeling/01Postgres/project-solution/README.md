@@ -24,11 +24,11 @@ README.md
 
 ## Installation
 
-### 1. Install PostgreSQL Server
+### Install PostgreSQL Server
 
-Download the appropriate installer from https://www.postgresql.org/download/.
+Download the appropriate installer from https://www.postgresql.org/download/
 
-### 2. Create new user and database 
+### Create new user and database 
 
 After postgres was installed, open the psql terminal using the default configurations (localhost, 5432 port, and so on).
 Execute the following command in the console:
@@ -50,6 +50,14 @@ Install the `psycopg2` PostgreSQL database adapter, the `sqlalchemy` Python SQL 
 pip install psycopg2
 pip install sqlalchemy
 pip install ipython-sql
+```
+
+### Execute Python Script
+
+Open the terminal and execute the table creation script.
+
+```
+python create_tables.py
 ```
 
 ## Database schema
