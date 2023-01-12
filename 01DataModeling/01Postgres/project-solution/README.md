@@ -46,7 +46,7 @@ Documentation about [user creation](https://www.postgresql.org/docs/8.0/sql-crea
 Install the `psycopg2` PostgreSQL database adapter, the `sqlalchemy` Python SQL toolkit and the `ipython-sql` SQL magic function.
 > **NOTE**:  It is extremely advisable to create a seperate python environment (using [anaconda](https://www.anaconda.com/)) so that other workspaces are not going to be polluted.
 
-``` console
+```
 pip install psycopg2
 pip install sqlalchemy
 pip install ipython-sql
