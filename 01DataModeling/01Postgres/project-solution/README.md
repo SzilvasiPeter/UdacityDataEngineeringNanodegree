@@ -62,6 +62,7 @@ python create_tables.py
 
 ## Database schema
 
+![database schema](./img/sparkify_dbschema.png)
 
 ## ETL pipeline
 
