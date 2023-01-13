@@ -31,7 +31,7 @@ Download the appropriate installer from https://www.postgresql.org/download/
 After postgres was installed, open the psql terminal using the default configurations (localhost, 5432 port, and so on).
 Execute the following command in the console:
 
-``` console
+``` sql
 CREATE DATABASE studentdb;
 CREATE USER student WITH PASSWORD 'student' CREATEDB;
 GRANT ALL PRIVILEGES ON DATABASE studentdb TO student;
