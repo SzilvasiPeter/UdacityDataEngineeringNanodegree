@@ -8,6 +8,17 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    This procedure processes a song file whose filepath has been provided as an arugment.
+    It extracts the song and artist information to store it into the song and artist table respectively.
+
+    Parameters
+    ----------
+    cur : cursor
+        The database connection cursor.
+    filepath : str
+        The file path to the song file.
+    """
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -21,6 +32,20 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+    This procedure processes a log file whose filepath has been provided as an argument.
+    It filters the data where the action is NextSong.
+    After converting timestamp column to datetime, it inserts the time data the time table.
+    Next, it adds the customer related data to the customer table.
+    Once all the dimension tables are populated, it inserts the records into the songplay fact table.
+
+    Parameters
+    ----------
+    cur : cursor
+        The database connection cursor.
+    filepath : str
+        The file path to the log file.
+    """
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -63,6 +88,21 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    """
+    This procedure processes JSON files whose filepath has been provided as an argument.
+    It iterates over all the files then processes them using the `func` function. 
+
+    Parameters
+    ----------
+    cur : cursor
+        The database connection cursor.
+    conn : connection
+        The connection to a PostgreSQL database instance.
+    filepath : str
+        The file path to the JSON files.
+    func : function
+        The function to process the JSON files.
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
