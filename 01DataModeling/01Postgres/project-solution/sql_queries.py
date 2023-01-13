@@ -38,7 +38,7 @@ song_table_create = ("""
         artist_id TEXT REFERENCES artist (artist_id),
         title TEXT,
         year INT,
-        duration REAL
+        duration FLOAT
     )
 """)
 
@@ -47,8 +47,8 @@ artist_table_create = ("""
         artist_id TEXT PRIMARY KEY,
         name TEXT,
         location TEXT,
-        latitude REAL,
-        longitude REAL 
+        latitude FLOAT,
+        longitude FLOAT 
     )
 """)
 
