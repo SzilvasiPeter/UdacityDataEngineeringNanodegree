@@ -11,10 +11,10 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 songplay_table_create = ("""
     CREATE TABLE IF NOT EXISTS songplay (
         songplay_id SERIAL PRIMARY KEY,
-        customer_id INT REFERENCES customer (customer_id),
+        customer_id INT REFERENCES customer (customer_id) NOT NULL,
         song_id TEXT REFERENCES song (song_id),
         artist_id TEXT REFERENCES artist (artist_id),
-        start_time TIMESTAMP REFERENCES time (start_time),
+        start_time TIMESTAMP REFERENCES time (start_time) NOT NULL,
         session_id INT,
         level TEXT,
         location TEXT,
