@@ -1,7 +1,19 @@
 # UdacityDataEngineeringNanodegree
 Udacity - Data Engineering with Microsoft Azure Nanodegree
 
-## Course 1: Data Modeling
+## How to Extract the Bike Sharing Data?
+
+In order to extract the bike sharing dataset from `bikeshare-dataset.zip` file. Execute the `extract_zip.py` from the root directory.
+
+```
+python extract_zip.py
+```
+
+It will generate a `data` folder (for the 2nd and the 3rd project) with the corresponding CSV files.
+
+## Course Overview
+
+### Course 1: Data Modeling
 
 | LESSON TITLE | LEARNING OUTCOMES |
 |---|---|

@@ -26,6 +26,7 @@ def unzip(zipfile, extract_to):
 
 
 if __name__ == "__main__":
-    zipfile = '../project-starter/azure-data-warehouse-projectdatafiles.zip'
-    extract_to = './data'
-    unzip(zipfile, extract_to)
+    zipfile = './bikeshare-dataset.zip'
+    extract_to1 = './02CloudDataWarehouse/project-solution/data'
+    extract_to1 = './03DataLakehouse/project-solution/data'
+    unzip(zipfile, extract_to1)
