@@ -10,3 +10,12 @@ Once the bike sharing dataset was extracted by `extract_zip.py` script then uplo
 5. Press the **Upload** button
     - Add the target directory (optional)
     - Browse and select the extracted files
+
+## ERD Diagram
+
+Seperate date table dimension is created for the payment and the trip table. Because tables differ from their time granurality.
+
+- Trip date dimension is generated hourly due to the interest of time of the day (morning, afternoon, night, evening) information.
+- Payment date dimension is generated daily due to the interest of money spending per month, quarter, year.
+
+![ERD](./images/erd_divvy.png)
