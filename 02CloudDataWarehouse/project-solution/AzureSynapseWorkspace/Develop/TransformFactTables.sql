@@ -5,7 +5,7 @@ SELECT
     t.start_station_id,
     t.end_station_id,
     r.rider_id,
-    DATEADD(hour, DATEDIFF(hour, 0, CAST(t.started_at AS DATETIME2)), 0) AS time_id
+    CAST(t.started_at AS DATE) AS date_id
 INTO trips
 FROM stage_trips AS t
 INNER JOIN stage_riders AS r

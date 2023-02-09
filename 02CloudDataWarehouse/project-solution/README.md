@@ -39,3 +39,11 @@ Seperate date table dimension is created for the payment and the trip table. Bec
 - Payment date dimension is generated daily.
 
 ![ERD](./images/erd_divvy.png)
+
+## References
+
+* Truncate date to only hour / minute: https://stackoverflow.com/a/9783814/10721627
+* Generate Dates betweeen date ranges: https://stackoverflow.com/a/7824919/10721627
+* Create comprehensive date dimension: https://gist.github.com/jrgcubano/c4dbaa879a1cfc9899f961d6eafa737c
+* Fastest way to merge two tables: https://stackoverflow.com/a/49916882/10721627
+* UNION vs DISTINCT and UNION ALL performance: https://stackoverflow.com/a/35628095/10721627
