@@ -26,3 +26,16 @@ python ProjectDataToPostgres.py
     - PostgreSQL resource (fill the password if given)
     - Blob storage resource
 3. Ingest data (Home tab -> Ingest button) from PostgreSQL to Blob storage. Select `public.payment`, `public.rider`, `public.station`, `public.trip` existing tables.
+4. Create Managed SQL pools: Manage tab -> SQL pools -> + New
+    - Decrease the performance level to the minimum
+
+**Note**: If the SQL database does not appear under the **Workspace** tab then restart the managed SQL pool. Pause then start the SQL pool to restart it.
+
+## ERD Diagram
+
+Seperate date table dimension is created for the payment and the trip table. Because tables differ from their time granurality.
+
+- Trip date dimension is generated hourly.
+- Payment date dimension is generated daily.
+
+![ERD](./images/erd_divvy.png)
