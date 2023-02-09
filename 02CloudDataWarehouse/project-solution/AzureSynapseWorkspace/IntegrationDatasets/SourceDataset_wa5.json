@@ -1,0 +1,25 @@
+{
+    "name": "SourceDataset_wa5",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzurePostgreSql1",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "cw_table": {
+                "type": "String"
+            }
+        },
+        "annotations": [],
+        "type": "AzurePostgreSqlTable",
+        "schema": [],
+        "typeProperties": {
+            "schema": "public",
+            "table": {
+                "value": "@dataset().cw_table",
+                "type": "Expression"
+            }
+        }
+    },
+    "type": "Microsoft.Synapse/workspaces/datasets"
+}
