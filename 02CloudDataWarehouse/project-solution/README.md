@@ -33,17 +33,14 @@ python ProjectDataToPostgres.py
 
 ## ERD Diagram
 
-Seperate date table dimension is created for the payment and the trip table. Because tables differ from their time granurality.
-
-- Trip date dimension is generated hourly.
-- Payment date dimension is generated daily.
+Date table was generated via the most recent date from the `trip` and the `payment` table. The date generation script generates the previous year from the most recent date.
 
 ![ERD](./images/erd_divvy.png)
 
 ## References
 
+* Configure external table: https://learn.microsoft.com/en-us/sql/relational-databases/polybase/polybase-configure-azure-blob-storage?view=sql-server-ver16#configure-an-external-table
 * Truncate date to only hour / minute: https://stackoverflow.com/a/9783814/10721627
 * Generate Dates betweeen date ranges: https://stackoverflow.com/a/7824919/10721627
 * Create comprehensive date dimension: https://gist.github.com/jrgcubano/c4dbaa879a1cfc9899f961d6eafa737c
-* Fastest way to merge two tables: https://stackoverflow.com/a/49916882/10721627
 * UNION vs DISTINCT and UNION ALL performance: https://stackoverflow.com/a/35628095/10721627
