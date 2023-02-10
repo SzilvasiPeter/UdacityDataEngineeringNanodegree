@@ -7,15 +7,19 @@ IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'DelimitedFo
 			))
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'udacitydivvy') 
-	CREATE EXTERNAL DATA SOURCE [udacitydivvy] 
-	WITH (
-		LOCATION = 'abfss://udacitydivvy@udacitydivvy.dfs.core.windows.net', 
-		TYPE = HADOOP
-	)
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'v3R!2tr0n6P4ssW0rD';
+CREATE DATABASE SCOPED CREDENTIAL AzureStorageCredential WITH IDENTITY = 'user', Secret = '<storage_account_access_key>';
+CREATE EXTERNAL DATA SOURCE AzureStorage WITH (  
+      TYPE = HADOOP,
+      LOCATION ='wasbs://<blob_container_name>@<storage_account_name>.blob.core.windows.net',  
+      CREDENTIAL = AzureStorageCredential  
+)
 GO
 
-CREATE EXTERNAL TABLE stage_riders (
+CREATE SCHEMA staging;
+GO
+
+CREATE EXTERNAL TABLE staging.riders (
 	[rider_id] bigint,
 	[first] nvarchar(100),
 	[last] nvarchar(100),
@@ -27,12 +31,12 @@ CREATE EXTERNAL TABLE stage_riders (
 	)
 	WITH (
 	LOCATION = 'public.rider.csv',
-	DATA_SOURCE = [udacitydivvy],
+	DATA_SOURCE = [AzureStorage],
 	FILE_FORMAT = [DelimitedFormat]
 	)
 GO
 
-CREATE EXTERNAL TABLE stage_payments (
+CREATE EXTERNAL TABLE staging.payments (
 	[payment_id] bigint,
 	[date_id] nvarchar(100),
 	[amount] float,
@@ -40,12 +44,12 @@ CREATE EXTERNAL TABLE stage_payments (
 	)
 	WITH (
 	LOCATION = 'public.payment.csv',
-	DATA_SOURCE = [udacitydivvy],
+	DATA_SOURCE = [AzureStorage],
 	FILE_FORMAT = [DelimitedFormat]
 	)
 GO
 
-CREATE EXTERNAL TABLE stage_stations (
+CREATE EXTERNAL TABLE staging.stations (
 	[station_id] nvarchar(100),
 	[name] nvarchar(100),
 	[latitude] float,
@@ -53,12 +57,12 @@ CREATE EXTERNAL TABLE stage_stations (
 	)
 	WITH (
 	LOCATION = 'public.station.csv',
-	DATA_SOURCE = [udacitydivvy],
+	DATA_SOURCE = [AzureStorage],
 	FILE_FORMAT = [DelimitedFormat]
 	)
 GO
 
-CREATE EXTERNAL TABLE stage_trips (
+CREATE EXTERNAL TABLE staging.trips (
 	[trip_id] nvarchar(100),
 	[rideable_type] nvarchar(100),
 	[started_at] nvarchar(100),
@@ -69,19 +73,13 @@ CREATE EXTERNAL TABLE stage_trips (
 	)
 	WITH (
 	LOCATION = 'public.trip.csv',
-	DATA_SOURCE = [udacitydivvy],
+	DATA_SOURCE = [AzureStorage],
 	FILE_FORMAT = [DelimitedFormat]
 	)
 GO
 
-SELECT TOP 100 * FROM stage_riders
-GO
-
-SELECT TOP 100 * FROM stage_payments
-GO
-
-SELECT TOP 100 * FROM stage_stations
-GO
-
-SELECT TOP 100 * FROM stage_trips
+SELECT TOP 100 * FROM staging.riders
+SELECT TOP 100 * FROM staging.payments
+SELECT TOP 100 * FROM staging.stations
+SELECT TOP 100 * FROM staging.trips
 GO
