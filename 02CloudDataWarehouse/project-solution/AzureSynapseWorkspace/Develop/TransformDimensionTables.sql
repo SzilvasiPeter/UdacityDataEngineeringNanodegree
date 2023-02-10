@@ -8,7 +8,7 @@ SELECT
     CAST(account_end_date AS DATE) AS account_end_date,
     is_member
 INTO riders
-FROM stage_riders
+FROM staging.riders
 GO
 
 SELECT
@@ -17,5 +17,5 @@ SELECT
     latitude,
     longitude
 INTO stations
-FROM stage_stations
+FROM staging.stations
 GO
