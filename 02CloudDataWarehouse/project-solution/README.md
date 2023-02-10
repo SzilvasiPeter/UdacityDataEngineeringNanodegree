@@ -40,7 +40,7 @@ Date table was generated via the most recent date from the `trip` and the `payme
 ## References
 
 * Configure external table: https://learn.microsoft.com/en-us/sql/relational-databases/polybase/polybase-configure-azure-blob-storage?view=sql-server-ver16#configure-an-external-table
-* Calculate age in years: https://stackoverflow.com/a/1572257/10721627
+* Calculate age in years: https://stackoverflow.com/a/75412064/10721627
 * Generate Dates betweeen date ranges: https://stackoverflow.com/a/7824919/10721627
 * Create comprehensive date dimension: https://gist.github.com/jrgcubano/c4dbaa879a1cfc9899f961d6eafa737c
 * UNION vs DISTINCT and UNION ALL performance: https://stackoverflow.com/a/35628095/10721627
