@@ -29,7 +29,7 @@ python ProjectDataToPostgres.py
 4. Create Managed SQL pools: Manage tab -> SQL pools -> + New
     - Decrease the performance level to the minimum
 
-**Note**: If the SQL database does not appear under the **Workspace** tab then restart the managed SQL pool. Pause then start the SQL pool to restart it.
+**Note**: If the SQL database does not appear under the **Workspace** tab then press the refresh icon at the top right corner.
 
 ## ERD Diagram
 
