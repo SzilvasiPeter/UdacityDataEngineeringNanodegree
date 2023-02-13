@@ -8,8 +8,8 @@ from zipfile import ZipFile
 def unzip(zipfile, extract_to):
     with ZipFile(zipfile, "r") as zip_file:
         for file in zip_file.namelist():
-            # match only for the csv files under the 'Out/' folder
-            if not re.search('^Out\/\w+\.csv$', file):
+            # match only for the csv files under the 'Out/' or 'Data/' folder
+            if not (re.search('^Out\/\w+\.csv$', file) or re.search('^Data\/\w+\.csv$', file)):
                 continue
             
             # create the new destination directory
@@ -26,7 +26,12 @@ def unzip(zipfile, extract_to):
 
 
 if __name__ == "__main__":
-    zipfile = './bikeshare-dataset.zip'
+    bikshare_zip = './bikeshare-dataset.zip'
+    nycpayroll_zip = './data-nyc-payroll.zip'
     extract_to1 = './02CloudDataWarehouse/project-solution/data'
-    extract_to1 = './03DataLakehouse/project-solution/data'
-    unzip(zipfile, extract_to1)
+    extract_to2 = './03DataLakehouse/project-solution/data'
+    extract_to3 = './04DataPipeline/project-solution/data'
+
+    unzip(bikshare_zip, extract_to1)
+    unzip(bikshare_zip, extract_to2)
+    unzip(nycpayroll_zip, extract_to3)
