@@ -1,0 +1,34 @@
+{
+	"name": "PayrollToSQL",
+	"properties": {
+		"activities": [
+			{
+				"name": "Load Payroll to SQL database",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.1:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "PayrollToSQL",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-02-13T14:39:32Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

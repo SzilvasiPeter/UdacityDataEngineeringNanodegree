@@ -1,0 +1,9 @@
+{
+	"name": "nycpayroll-peter-sz",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3cb905a9-fd74-4668-828b-43b1a79baaf0",
+		"tenantId": "9b7cbd77-6d6b-4879-8aba-63d7dfb18472"
+	}
+}

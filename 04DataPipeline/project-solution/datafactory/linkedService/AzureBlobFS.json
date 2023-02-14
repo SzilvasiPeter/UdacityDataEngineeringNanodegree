@@ -1,0 +1,12 @@
+{
+	"name": "AzureBlobFS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://adlsnycpayrollpetersz.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEFBNjZCQ0IzLUM2MDYtNEI2Ni05MjA5LTQ2MjY5MDQzRDEzMV8zYTJhZDMyMS0wY2M4LTQxMTItOWQ1NC1kOTdjN2U5ZTFhMTQiDQp9"
+		}
+	}
+}
